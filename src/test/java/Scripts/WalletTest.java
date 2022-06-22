@@ -38,6 +38,8 @@ public class WalletTest extends Baseclass{
 	public void Hover_stars() throws InterruptedException {
 		Loginwithwallet();
 		page.Hoveron_Star();
+	    page.selectValueFromDropDown(driver);
+		//System.out.println(str);
 		
 	}
 @Test(priority=3,description="Go to profile and check review")
@@ -49,7 +51,7 @@ public class WalletTest extends Baseclass{
 			
 	}
 	@AfterMethod
-	public void quit(ITestResult result) {
+	public  void quit(ITestResult result) {
 		
 if(ITestResult.FAILURE==result.getStatus()){
 			

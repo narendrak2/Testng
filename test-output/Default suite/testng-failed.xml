@@ -5,8 +5,6 @@
     <classes>
       <class name="Scripts.WalletTest">
         <methods>
-          <include name="Loginwithwallet"/>
-          <include name="Submitting"/>
           <include name="Hover_stars"/>
           <include name="setup"/>
           <include name="quit"/>

@@ -1,8 +1,12 @@
 package Pages;
 
+import java.io.File;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WrapsElement;
@@ -13,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import Basepackage.Baseclass;
 
@@ -108,6 +113,39 @@ WebElement Profileclick;
 
 WebElement Testinsuranceappear;
 
+
+@FindBy(xpath="//*[@id='reviews-section']/modal-dialog/div/div/write-review/div[2]/div/ng-dropdown/div/span[1]")
+
+WebElement Clickondropdown;
+
+
+@FindBy(xpath="//ul[@aria-labelledby='']/li[2]")
+
+WebElement ClickonHealth;
+
+
+@FindBy(xpath="//textarea[@placeholder='Write your review...']")
+
+WebElement Reviewadd;
+
+
+
+@FindBy(xpath="//div[normalize-space()='Submit']")
+
+WebElement submit;
+
+
+
+String reviewadding="WalletHub helps all consumers reach top financial fitness by providing Free credit scores and credit reports that are updated on a daily basis Free 24/7 credit monitoring and personalized advice that will help you improve your credit and save money.";
+		
+
+
+
+
+
+
+
+
  public Walletpage() {
 	 driver.get(url);
 	 PageFactory.initElements(driver, this);
@@ -141,31 +179,24 @@ WebElement Testinsuranceappear;
 	 action.moveToElement(star).perform();
 	 wait=new WebDriverWait(driver,10);
 	 WebElement str= wait.until(ExpectedConditions.elementToBeClickable(star4));
-
 	 str.click();
 	 Thread.sleep(2000);
-	 
-	
- //WebElement values=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dropdown second']")));
- List<WebElement> value =driver.findElements(By.xpath("//*[@id='reviews-section']/modal-dialog/div/div/write-review/div[2]/div/ng-dropdown/div/span[1]"));
- Thread.sleep(3000);
- 
-	 for(int i=0;i<value.size();i++) {
-// values.click();
- Thread.sleep(3000);
-		 if(value.get(i).getText().contains("Health Insurance")) {
-			 Thread.sleep(3000);
-			 value.get(i).click();
-			Thread.sleep(2000);
-	 
-		 }
-		 }
-		
  }
+	 public void selectValueFromDropDown(WebDriver driver) throws InterruptedException{
+	       
+		 Clickondropdown.click();
+		 Thread.sleep(2000);
+		 ClickonHealth.click();
+		 Reviewadd.sendKeys(reviewadding);
+		 Thread.sleep(3000);
+		 submit.click();
+		 Thread.sleep(3000);
+	        
+	        }       
  public String Click_profile() throws InterruptedException {
 	 Actions action=new Actions(driver);
 	 Thread.sleep(2000);
-	 WebElement profile=Profilehover;//driver.findElement(By.xpath("//review-star[@class='rvs-svg']//div[@class='rating-box-wrapper']//*[name()='svg'][1]"));
+	 WebElement profile=Profilehover;
 	 action.moveToElement(profile).perform();
 	 wait=new WebDriverWait(driver,10);
 	 WebElement web= wait.until(ExpectedConditions.elementToBeClickable(Profileclick));
@@ -174,9 +205,9 @@ WebElement Testinsuranceappear;
 	 WebElement web1= wait.until(ExpectedConditions.elementToBeClickable(Testinsuranceappear));
 	 String str=web1.getText();
 	 web1.click();
+	 Thread.sleep(2000);
+	 boolean str2=driver.getPageSource().contains(reviewadding);
 	 return str;
-	 
-	
  }
 
 }

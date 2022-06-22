@@ -1,14 +1,19 @@
 package Basepackage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 public class Baseclass {
 	
@@ -19,7 +24,7 @@ public class Baseclass {
 					pop=new Properties();
 					String path=System.getProperty("user.dir");
 					
-					FileInputStream fi=new FileInputStream("/Users/narendra/eclipse-workspace/Java.com.project/src/main/java/Readpop.properties");
+					FileInputStream fi=new FileInputStream("/Users/narendra/git/Testng/Java.com.project/src/main/java/Readpop.properties");
 					try {	
 						
 						pop.load(fi);
