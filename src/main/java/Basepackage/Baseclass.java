@@ -22,7 +22,6 @@ public class Baseclass {
 			public Baseclass() {	
 				try {
 					pop=new Properties();
-					String path=System.getProperty("user.dir");
 					
 					FileInputStream fi=new FileInputStream("/Users/narendra/git/Testng/Java.com.project/src/main/java/Readpop.properties");
 					try {	
@@ -41,8 +40,6 @@ public class Baseclass {
 			
 		public static void initialization() {
 			
-			String path=System.getProperty("user.dir");
-			
 			String browser=pop.getProperty("browser");
 		if(browser.equalsIgnoreCase("chrome"))
 		{
@@ -53,7 +50,7 @@ public class Baseclass {
 		}
 		else if(browser.equalsIgnoreCase("Firefox")){
 			
-			System.setProperty("webdriver.gecko.driver",path+"\\resources\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver","\\resources\\geckodriver.exe");
 			driver=new FirefoxDriver();
 		}
 		
