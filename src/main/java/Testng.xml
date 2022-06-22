@@ -4,7 +4,7 @@
     <test name="facebook" >
         <classes>
             <class name="Scripts.Signuptest" />
-             <class name="Scripts.Signuptest" />
+             <class name="Scripts.WalletTest" />
         </classes>
     </test>
 </suite>

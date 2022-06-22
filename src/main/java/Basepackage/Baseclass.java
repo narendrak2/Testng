@@ -48,7 +48,7 @@ public class Baseclass {
 		{
 			
 			
-			System.setProperty("webdriver.chrome.driver","//Users//narendra//Downloads//chromedriver 25");
+			System.setProperty("webdriver.chrome.driver","/Users/narendra/git/Testng/Java.com.project/drivers/chromedriver 25");
 			driver=new ChromeDriver();
 		}
 		else if(browser.equalsIgnoreCase("Firefox")){

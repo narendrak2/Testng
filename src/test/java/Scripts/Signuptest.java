@@ -30,8 +30,8 @@ public class Signuptest extends Baseclass{
 	public void Loginwith_FB() throws InterruptedException {
 		
 		Signuppage page=new Signuppage();
-		//use here username and password have to pass here
-		page.login("narendra0035@gmail.com", "Naru@100");
+		//username and password have to pass here
+		page.login("", "");
 		page.clickbuttonAndwait();//Here waits until button available after logged in
 		System.out.println("Hello world");
 		
