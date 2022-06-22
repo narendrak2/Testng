@@ -82,10 +82,6 @@ WebElement star4;
 WebElement submitbtn;
 
 
-//@FindBy(xpath="//span[normalize-space()='Select...']")
-
-//List<WebElement> selectoption;
-
 
 @FindBy(xpath="//span[normalize-space()='Select...'])[1]")
 List<WebElement> selectoption1;
