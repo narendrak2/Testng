@@ -29,7 +29,7 @@ public class WalletTest extends Baseclass{
 	public void Loginwithwallet() throws InterruptedException {
 		page=new Walletpage();
 		//Please pass here username and password
-		String str=page.GetLoggedin_AndWait("narendra0035@gmail.com", "Naru@100");
+		String str=page.GetLoggedin_AndWait("", "");
 		Assert.assertEquals(str, "My Wallet");
 		System.out.println(str);
 	}	
@@ -39,7 +39,6 @@ public class WalletTest extends Baseclass{
 		Loginwithwallet();
 		page.Hoveron_Star();
 	    page.selectValueFromDropDown(driver);
-		//System.out.println(str);
 		
 	}
 @Test(priority=3,description="Go to profile and check review")
@@ -56,10 +55,10 @@ public class WalletTest extends Baseclass{
 if(ITestResult.FAILURE==result.getStatus()){
 			
 			try{
-				//Taking screenshot and captured under screenshot folder
+				//Taking screenshot for failed tests and captured under screenshot folder
 				TakesScreenshot screenshot=(TakesScreenshot)driver;
 				File src=screenshot.getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(src, new File("screenshots\\"+result.getName()+".png"));
+				FileUtils.copyFile(src, new File("test-output/Screenshot\\"+result.getName()+".png"));
 				System.out.println("Successfully taken screenshot");
 				
 			}catch (Exception e){
