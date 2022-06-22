@@ -135,13 +135,6 @@ WebElement submit;
 String reviewadding="WalletHub helps all consumers reach top financial fitness by providing Free credit scores and credit reports that are updated on a daily basis Free 24/7 credit monitoring and personalized advice that will help you improve your credit and save money.";
 		
 
-
-
-
-
-
-
-
  public Walletpage() {
 	 driver.get(url);
 	 PageFactory.initElements(driver, this);
